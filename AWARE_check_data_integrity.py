@@ -9,6 +9,7 @@ import pandas as pd
 import smtplib
 import datetime
 import itertools
+import re
 from datetime import datetime as dt
 from operator import itemgetter
 from reportlab.lib import colors
@@ -17,6 +18,8 @@ from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from string import Template
 
 dbs = ['***', '***']
 
