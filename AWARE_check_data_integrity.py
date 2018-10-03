@@ -18,18 +18,18 @@ from reportlab.lib.pagesizes import letter
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 from email.mime.text import MIMEText
 
-dbs = ['Pisner_24', 'Pisner_29']
+dbs = ['***', '***']
 
 # Android
-db1 = pymysql.connect(host="r33data-cluster.cluster-cop1qqqzffyg.us-east-2.rds.amazonaws.com",
-                     user="IMHR",
-                     passwd="7L4ypF)fqicX&FxdRnHc",
+db1 = pymysql.connect(host="***",
+                     user="***",
+                     passwd="***",
                      db=dbs[0], connect_timeout=1200)
 
 # iOS
-db2 = pymysql.connect(host="r33data-cluster.cluster-cop1qqqzffyg.us-east-2.rds.amazonaws.com",
-                     user="IMHR",
-                     passwd="7L4ypF)fqicX&FxdRnHc",
+db2 = pymysql.connect(host="***",
+                     user="***",
+                     passwd="***",
                      db=dbs[1], connect_timeout=1200)
 
 def fetch_ids_droid(date_min_unix):
@@ -360,14 +360,14 @@ message_text = str(intro_msg[0]) + '\n' + str(intro_msg[1])
 for device_id_check in device_ids_all:
     if empty_list is not True:
         # Android
-        db1 = pymysql.connect(host="r33data-cluster.cluster-cop1qqqzffyg.us-east-2.rds.amazonaws.com",
-                              user="IMHR",
-                              passwd="7L4ypF)fqicX&FxdRnHc",
+        db1 = pymysql.connect(host="***",
+                              user="***",
+                              passwd="***",
                               db=dbs[0], connect_timeout=720)
         # iOS
-        db2 = pymysql.connect(host="r33data-cluster.cluster-cop1qqqzffyg.us-east-2.rds.amazonaws.com",
-                              user="IMHR",
-                              passwd="7L4ypF)fqicX&FxdRnHc",
+        db2 = pymysql.connect(host="***",
+                              user="***",
+                              passwd="***",
                               db=dbs[1], connect_timeout=720)
         data_inventory_dict = dict()
         data_inventory_dict = check_device_enroll(data_inventory_dict, device_id_check, date_min_wk_unix)
@@ -573,7 +573,7 @@ server = smtplib.SMTP('smtp.gmail.com', 587)  # port 465 or 587
 server.ehlo()
 server.starttls()
 server.ehlo()
-server.login('r33aware@gmail.com', 'beevers01')
-#server.sendmail(to_addrs=['dpisner@utexas.edu'], from_addr='r33aware@gmail.com', msg=msg.as_string())
+server.login('***', '***')
+#server.sendmail(to_addrs=['dpisner@utexas.edu'], from_addr='***', msg=msg.as_string())
 server.sendmail(to_addrs=['dpisner@utexas.edu','semeon.risom@gmail.com', 'keanjhsu@utexas.edu', 'kdcaffey@utexas.edu', 'jocelyn.labrada@utexas.edu', 'shumake@utexas.edu', 'beevers@utexas.edu'], from_addr='r33aware@gmail.com', msg=msg.as_string())
 server.close()
